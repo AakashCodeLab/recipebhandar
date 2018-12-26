@@ -8,7 +8,7 @@ export class AuthGuard implements CanActivate {
     constructor(private router: Router) { }
 
     canActivate() {
-        if (localStorage.getItem('isLoggedin') || localStorage.getItem('isSignup')) {
+        if (localStorage.getItem('isLoggedin')) {
           const obj1 = JSON.parse(localStorage.getItem('isLoggedin'));
           if (obj1.userName === 'aakash' && obj1.password === '123456') {
             return true;
