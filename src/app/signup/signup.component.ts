@@ -31,13 +31,25 @@ export class SignupComponent implements OnInit {
     if (this.registerForm.invalid) {
       return;
     }
+    let myArray = [];
+    const currentuser = [];
     const loginobj = {
       userName: '',
       password: ''
     };
     loginobj.userName = this.registerForm.value.userName;
     loginobj.password = this.registerForm.value.password;
-    localStorage.setItem('isLoggedin',  JSON.stringify(loginobj));
+    if (JSON.parse(localStorage.getItem('isLoggedin'))) {
+      myArray = JSON.parse(localStorage.getItem('isLoggedin'));
+      if (myArray.length > 0) {
+        myArray.push(loginobj);
+      }else {
+        myArray.push(loginobj);
+      }}else {
+      myArray.push(loginobj);
+    }
+    localStorage.setItem('isLoggedin',  JSON.stringify(myArray));
+    localStorage.setItem('currentuser',  JSON.stringify(loginobj));
     this.router.navigate(['/login']);
   }
 }

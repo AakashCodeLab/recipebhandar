@@ -44,8 +44,18 @@ export class LoginComponent implements OnInit, AfterViewInit {
       if (this.loginForm.invalid) {
         return;
       }
-        localStorage.setItem('isLoggedin',  JSON.stringify(this.loginForm.value));
-      this.router.navigate(['/home']);
+      const registeruser = JSON.parse(localStorage.getItem('isLoggedin'));
+      console.log(registeruser)
+      const  self = this
+     const verified = registeruser.some(function (obj) {
+        return obj.userName === self.loginForm.value.userName &&  obj.password ===  self.loginForm.value.password ;
+      })
+
+      if (verified) {
+        this.router.navigate(['/home']);
+      }else {
+        return false;
+      }
     }
 
 }
