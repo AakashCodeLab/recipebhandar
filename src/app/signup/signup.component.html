@@ -1,39 +1,60 @@
 <div class="login-register" style="background-image:url('https://d12ydcmiv69ory.cloudfront.net/portfolio_casestudy/1532082216_tristate_caternow__bg1532082216.png');">
   <div class="login-box card">
     <div class="card-body">
-      <form class="form-horizontal form-material" id="loginform">
+      <form class="form-horizontal form-material" [formGroup]="registerForm" id="loginform">
         <h3 class="box-title m-b-20">Sign Up</h3>
         <div class="form-group">
           <div class="col-xs-12">
-            <input class="form-control" required="" type="text" placeholder="Name">
+            <input class="form-control" formControlName="userName" name="userName" required="" type="text" placeholder="Name" [ngClass]="{ 'is-invalid': submitted && f.userName.errors }">
+            <div *ngIf="submitted && f.userName.errors" class="invalid-feedback">
+              <div *ngIf="f.userName.errors.required">First Name is required</div>
+            </div>
           </div>
         </div>
         <div class="form-group ">
           <div class="col-xs-12">
-            <input class="form-control" required="" type="text" placeholder="Email">
+            <input class="form-control" formControlName="email" required="" type="text" placeholder="Email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+              <div *ngIf="f.email.errors.required">Email is required</div>
+              <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+            </div>
           </div>
         </div>
         <div class="form-group ">
           <div class="col-xs-12">
-            <input class="form-control" required="" type="password" placeholder="Password">
+            <input class="form-control" formControlName="password" required="" type="password" placeholder="Password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+              <div *ngIf="f.password.errors.required">Password is required</div>
+              <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+            </div>
           </div>
         </div>
         <div class="form-group">
           <div class="col-xs-12">
-            <input class="form-control" required="" type="password" placeholder="Confirm Password">
+            <input class="form-control" formControlName="confirmPassword" required="" type="password" placeholder="Confirm Password" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }">
+            <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+              <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
+              <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
+            </div>
+
           </div>
         </div>
         <div class="form-group row">
           <div class="col-md-12">
             <div class="checkbox checkbox-success p-t-0">
-              <input id="checkbox-signup" type="checkbox" required="" class="filled-in chk-col-light-blue">
+
+              <input id="checkbox-signup" type="checkbox"  formControlName="termsAndConditions" required="" class="filled-in chk-col-light-blue" [ngClass]="{ 'is-invalid': submitted && f.termsAndConditions.errors }">
+
               <label for="checkbox-signup"> I agree to all <a href="javascript:void(0)">Terms</a></label>
+              <div style="display: block" *ngIf="submitted && f.termsAndConditions.errors" class="invalid-feedback">
+                <div *ngIf="f.termsAndConditions.errors.required">Please checked the terms </div>
+              </div>
             </div>
           </div>
         </div>
         <div class="form-group text-center p-b-20">
           <div class="col-xs-12">
-            <a [routerLink]="['/login']" class="btn btn-info btn-lg btn-block btn-rounded text-uppercase waves-effect waves-light">Sign Up</a>
+            <a  class="btn btn-info btn-lg btn-block btn-rounded text-uppercase waves-effect waves-light" (click)="onSubmit()">Sign Up</a>
           </div>
         </div>
         <div class="form-group m-b-0">
