@@ -31,7 +31,13 @@ export class SignupComponent implements OnInit {
     if (this.registerForm.invalid) {
       return;
     }
-   // localStorage.setItem('isSignup', 'true');
-    this.router.navigate(['/home']);
+    const loginobj = {
+      userName: '',
+      password: ''
+    };
+    loginobj.userName = this.registerForm.value.userName;
+    loginobj.password = this.registerForm.value.password;
+    localStorage.setItem('isLoggedin',  JSON.stringify(loginobj));
+    this.router.navigate(['/login']);
   }
 }

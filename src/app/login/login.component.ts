@@ -40,12 +40,11 @@ export class LoginComponent implements OnInit, AfterViewInit {
 
     onLoggedin() {
       this.submitted = true;
-
       // stop here if form is invalid
       if (this.loginForm.invalid) {
         return;
       }
-        localStorage.setItem('isLoggedin', 'true');
+        localStorage.setItem('isLoggedin',  JSON.stringify(this.loginForm.value));
       this.router.navigate(['/home']);
     }
 
