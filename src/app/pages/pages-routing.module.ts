@@ -19,7 +19,6 @@ const routes: Routes = [
             { path: 'rating', loadChildren: './component/rating/rating.module#RatingModule' },
             { path: 'tabs', loadChildren: './component/tabs/tabs.module#TabsModule' },
             { path: 'timepicker', loadChildren: './component/timepicker/timepicker.module#TimepickerModule' },
-            { path: 'typehead', loadChildren: './component/typehead/typehead.module#TypeheadModule' }
         ]
     }
 ];
