@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
 
     onLoggedin() {
         localStorage.setItem('isLoggedin', 'true');
+      this.router.navigate(['/home']);
     }
 
 }
