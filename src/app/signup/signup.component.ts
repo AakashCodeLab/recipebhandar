@@ -31,7 +31,7 @@ export class SignupComponent implements OnInit {
     if (this.registerForm.invalid) {
       return;
     }
-    let myArray = [];
+    let users = [];
     const currentuser = [];
     const loginobj = {
       userName: '',
@@ -40,15 +40,15 @@ export class SignupComponent implements OnInit {
     loginobj.userName = this.registerForm.value.userName;
     loginobj.password = this.registerForm.value.password;
     if (JSON.parse(localStorage.getItem('isLoggedin'))) {
-      myArray = JSON.parse(localStorage.getItem('isLoggedin'));
-      if (myArray.length > 0) {
-        myArray.push(loginobj);
+      users = JSON.parse(localStorage.getItem('isLoggedin'));
+      if (users.length > 0) {
+        users.push(loginobj);
       }else {
-        myArray.push(loginobj);
+        users.push(loginobj);
       }}else {
-      myArray.push(loginobj);
+      users.push(loginobj);
     }
-    localStorage.setItem('isLoggedin',  JSON.stringify(myArray));
+    localStorage.setItem('isLoggedin',  JSON.stringify(users));
     localStorage.setItem('currentuser',  JSON.stringify(loginobj));
     this.router.navigate(['/login']);
   }
