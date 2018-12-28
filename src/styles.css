@@ -1,0 +1,38 @@
+.blue-snackbar {
+  background: #2196F3;
+  color:white;
+}
+
+.mat-button-focus-overlay {
+  background: #fff;
+}
+.mat-snack-bar-container {
+
+  background: #2196f3 !important;
+  color: #fff !important;
+  bottom: 600px !important;
+}
+.mat-snack-bar-container {
+  border-radius: 4px !important;
+  box-sizing: border-box !important;
+  display: block !important;
+  margin: 24px !important;
+  max-width: 33vw !important;
+  min-width: 344px !important;
+  padding: 14px 16px !important;
+  min-height: 48px !important;
+  transform-origin: center !important;
+}
+
+.mat-snack-bar-container {
+  box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12) !important;
+  color: #fff !important;
+  background: #2196f3 !important;
+}
+.cdk-global-overlay-wrapper, .cdk-overlay-container {
+  pointer-events: none !important;
+  top: 0 !important;
+  left: 0 !important;
+  height: 0% !important;
+  width: 100% !important;
+}
