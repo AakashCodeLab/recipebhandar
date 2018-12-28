@@ -5,18 +5,24 @@
         <h3 class="box-title m-b-20 heading">Login</h3>
         <div class="form-group ">
           <div class="col-xs-12">
-            <input class="form-control" type="text" formControlName="userName" required="" [ngClass]="{ 'is-invalid': submitted && f.userName.errors }" placeholder="Username">
+            <input (ngModelChange)="clearFilter()"  class="form-control" type="text" formControlName="userName" required="" [ngClass]="{ 'is-invalid': submitted && f.userName.errors }" placeholder="Username">
             <div  style="display: block !important;" *ngIf="submitted && f.userName.errors" class="invalid-feedback">
               <div *ngIf="f.userName.errors.required">User Name is required</div>
+            </div>
+            <div  style="display: block !important;" *ngIf="submitted" class="invalid-feedback">
+              <div  *ngIf="errorvalue===1 || errorvalue===3">You've entered the wrong Username</div>
             </div>
           </div>
         </div>
         <div class="form-group">
           <div class="col-xs-12">
-            <input class="form-control" formControlName="password" type="password" required="" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" placeholder="Password"> </div>
+            <input  (ngModelChange)="clearFilter()" class="form-control" formControlName="password" type="password" required="" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" placeholder="Password"> </div>
           <div style="display: block !important;" *ngIf="submitted && f.password.errors" class="invalid-feedback">
             <div  *ngIf="f.password.errors.required">Password is required</div>
             <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+          </div>
+          <div  style="display: block !important;" *ngIf="submitted" class="invalid-feedback">
+            <div *ngIf="errorvalue===2 || errorvalue===3">You've entered the wrong Password</div>
           </div>
         </div>
         <div class="form-group row">
