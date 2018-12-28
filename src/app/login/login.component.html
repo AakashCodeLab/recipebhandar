@@ -2,6 +2,14 @@
   <div class="login-box card wrap-login100">
     <div class="card-body">
       <form class="form-horizontal form-material" [formGroup]="loginForm"  id="loginform">
+        <div  style="display: block !important;" *ngIf="submitted" class="invalid-feedback">
+          <div *ngIf="errorvalue===3">
+            <div style="opacity: 1;" class="alert alert-danger alert-dismissible fade in">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+              The User does not exist. Please Sign up.
+            </div>
+          </div>
+        </div>
         <h3 class="box-title m-b-20 heading">Login</h3>
         <div class="form-group ">
           <div class="col-xs-12">
@@ -10,7 +18,7 @@
               <div *ngIf="f.userName.errors.required">User Name is required</div>
             </div>
             <div  style="display: block !important;" *ngIf="submitted" class="invalid-feedback">
-              <div  *ngIf="errorvalue===1 || errorvalue===3">You've entered the wrong Username</div>
+              <div  *ngIf="errorvalue===1">You've entered the wrong Username</div>
             </div>
           </div>
         </div>
@@ -22,7 +30,7 @@
             <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
           </div>
           <div  style="display: block !important;" *ngIf="submitted" class="invalid-feedback">
-            <div *ngIf="errorvalue===2 || errorvalue===3">You've entered the wrong Password</div>
+            <div *ngIf="errorvalue===2">You've entered the wrong Password</div>
           </div>
         </div>
         <div class="form-group row">
