@@ -17,6 +17,19 @@ export class LoginComponent implements OnInit, AfterViewInit {
     constructor(public router: Router, private formBuilder: FormBuilder) {}
 
     ngOnInit() {
+      if (localStorage.getItem('isLoggedin')) {
+        const obj1 = JSON.parse(localStorage.getItem('currentuser'));
+        const  registeruser = JSON.parse(localStorage.getItem('isLoggedin'));
+        console.log(registeruser)
+        const  self = this;
+        const verified = registeruser.some(function (obj) {
+          return obj.userName === obj1.userName &&  obj.password ===  obj1.password ;
+        })
+
+        if (verified) {
+          this.router.navigate(['/home']);
+        }
+      }
 
       this.loginForm = this.formBuilder.group({
         userName: ['', Validators.required],

@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PageComponent } from './pages.component';
+import {AuthGuard} from '../shared/guard/auth.guard';
 
 const routes: Routes = [
     {
-        path: '', component: PageComponent,
+        path: '',  canActivate: [AuthGuard], component: PageComponent,
         children: [
             { path: 'starter', loadChildren: './starter/starter.module#StarterModule' },
             { path: 'accordion', loadChildren: './component/accordion/accordion.module#AccordionModule' },
@@ -19,6 +20,9 @@ const routes: Routes = [
             { path: 'rating', loadChildren: './component/rating/rating.module#RatingModule' },
             { path: 'tabs', loadChildren: './component/tabs/tabs.module#TabsModule' },
             { path: 'timepicker', loadChildren: './component/timepicker/timepicker.module#TimepickerModule' },
+          { 'path': '', 'redirectTo': 'starter',
+            'pathMatch': 'full',
+          },
         ]
     }
 ];

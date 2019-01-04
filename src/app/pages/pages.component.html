@@ -22,30 +22,13 @@
     <!-- ============================================================== -->
     <div class="container-fluid">
 
-
-      <section id="Home">
-        <div class="container">
-          <a *ngFor="let data of finaldata; let i = index;" (click)="view(data,i)">
-            <div class="recipe">
-              <i (click)="delete(data,i)" class="icon">×</i>
-              <a (click)="edit(data,i)">
-                <i class="icon2">✍</i>
-              </a>
-              <img src={{data.url}} alt="{{data.name}}">
-              <h3> {{data.name}} </h3>
-              <p>by
-                <span class="author">{{data.author}} </span>
-              </p>
-            </div>
-          </a>
-        </div>
-      </section>
-
+<!--      <app-breadcrumb></app-breadcrumb>-->
+      <router-outlet></router-outlet>
 <!--      <app-breadcrumb></app-breadcrumb>
       &lt;!&ndash; ============================================================== &ndash;&gt;
       &lt;!&ndash; Start Page Content &ndash;&gt;
       &lt;!&ndash; ============================================================== &ndash;&gt;
-      <router-outlet></router-outlet>-->
+      <router-outlet></router-outlet>
       <!-- ============================================================== -->
       <!-- End Start Page Content -->
       <!-- ============================================================== -->
