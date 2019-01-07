@@ -1,0 +1,79 @@
+
+// Add Recipe css
+
+#addItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1em;
+}
+
+#addItem label {
+  padding: 1em;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+}
+
+#addItem input {
+  padding: 1em .5em;
+  border: 1px solid #666;
+  outline-color: orange;
+}
+
+#addItem textarea {
+  outline-color: orange;
+  padding: 1em;
+}
+
+#addItem button {
+  cursor: pointer;
+  padding: 1em;
+}
+
+.ingredients div {
+  display: flex;
+  margin: 1em 0;
+}
+
+.ingredients div input {
+  width: 100%;
+}
+.ingredients div button {
+  border: solid 1px #666;
+  background-color: red;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.submit {
+  margin: 1em 0;
+  background-color: orange;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  border-color: orange;
+}
+
+
+
+// Home
+
+#Home h2 {
+  text-align: center;
+  font-size: 2em;
+}
+
+@media all and (min-width: 900px) {
+  #addItem, #Home {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+}
+
+@media all and (max-width: 320px) {
+  nav {
+    flex-direction: column;
+  }
+
+}

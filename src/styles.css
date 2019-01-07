@@ -12,6 +12,7 @@
   color: #fff !important;
   bottom: 600px !important;
 }
+
 .mat-snack-bar-container {
   border-radius: 4px !important;
   box-sizing: border-box !important;
@@ -36,3 +37,6 @@
   height: 0% !important;
   width: 100% !important;
 }
+
+
+

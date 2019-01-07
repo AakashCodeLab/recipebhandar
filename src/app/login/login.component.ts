@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
     constructor(public router: Router, private formBuilder: FormBuilder) {}
 
     ngOnInit() {
-      if (localStorage.getItem('isLoggedin')) {
+      if (localStorage.getItem('currentuser')) {
         const obj1 = JSON.parse(localStorage.getItem('currentuser'));
         const  registeruser = JSON.parse(localStorage.getItem('isLoggedin'));
         console.log(registeruser)
@@ -60,7 +60,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
       }
       const registeruser = JSON.parse(localStorage.getItem('isLoggedin'));
       console.log(registeruser);
-
+      localStorage.setItem('currentuser',  JSON.stringify(this.loginForm.value));
       if (registeruser) {
         // const  self = this;
         const verified = registeruser.some( (obj) => {

@@ -2,7 +2,32 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <h3 class="card-title">Toggle Accordion</h3>
+
+              <section>
+                <form id="addItem">
+                  <label>Athor:</label>
+                  <input type="text" name="author" value="abc">
+                  <label>Recipe Name:</label>
+                  <input type="text" name="name" value="">
+                  <label for="desc"> Recipe Details:</label>
+                  <input type="text" name="desc" value="">
+                  <label class="ingredients">Ingredients:
+                    <div id="0">
+                      <input type="text" value="Garlic 20g">
+                      <button class="remove">
+                        <i>×</i>
+                      </button>
+                    </div>
+                  </label>
+                  <button class="add">Add Ingredient</button>
+                  <label for="">Recipe:</label>
+                  <textarea name="howto" cols="30" rows="20"></textarea>
+                  <label>Add Image (URL)</label>
+                  <input type="text" name="url" value="https://">
+                  <button class="submit" type="submit">Submit</button>
+                </form>
+              </section>
+                <!--<h3 class="card-title">Toggle Accordion</h3>
                 <h6 class="card-subtitle">This is basic toggletype accordion</h6>
                 <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
 				  <ngb-panel title="Simple">
@@ -38,11 +63,11 @@
 				      labore sustainable VHS.
 				    </ng-template>
 				  </ngb-panel>
-				</ngb-accordion>
-  					
+				</ngb-accordion>-->
+
             </div>
         </div>
-        <div class="card">
+    <!--    <div class="card">
         	<div class="card-body">
         		<h3 class="card-title">Accordion</h3>
                 <h6 class="card-subtitle">This is One open panel accordion</h6>
@@ -115,7 +140,7 @@
 				  <button class="btn btn-sm btn-outline-primary" (click)="acc.toggle('toggle-2')">Toggle second</button>
 				</p>
             </div>
-        </div> 
+        </div>
         <div class="card">
         	<div class="card-body">
         		<h3 class="card-title">Prevent panel toggle</h3>
@@ -153,6 +178,6 @@
 				  </ngb-panel>
 				</ngb-accordion>
             </div>
-        </div>               
+        </div>   -->
     </div>
 </div>

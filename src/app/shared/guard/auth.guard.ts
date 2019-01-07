@@ -20,9 +20,6 @@ export class AuthGuard implements CanActivate {
           if (verified) {
             return true;
           }
-         /* if (obj1.userName === 'aakash' && obj1.password === '123456') {
-            return true;
-          }*/
      }
 
         this.router.navigate(['/login']);

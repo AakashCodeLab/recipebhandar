@@ -16,7 +16,7 @@ export class StarterComponent implements  OnInit , AfterViewInit {
     this.finaldata = data.recipes;
     localStorage.setItem('prefixed-data', JSON.stringify( this.finaldata));
     if (this.router.url === '/') {
-      this.router.navigate(['/starter']);
+      this.router.navigate(['/home']);
     }
   }
   ngAfterViewInit() {}

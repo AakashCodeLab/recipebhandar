@@ -13,8 +13,7 @@
       </div>
       <!-- User profile text-->
       <div class="profile-text">
-        <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Markarn
-          Doe <i class="fa fa-angle-down"></i></a>
+        <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">{{userName}} <i class="fa fa-angle-down"></i></a>
         <div class="dropdown-menu animated flipInY">
           <!-- text-->
           <a href="#" class="dropdown-item"><i class="ti-user"></i> My Profile</a>
@@ -29,7 +28,7 @@
           <!-- text-->
           <div class="dropdown-divider"></div>
           <!-- text-->
-          <a href="#" class="dropdown-item"><i class="fa fa-power-off"></i> Logout</a>
+          <a (click)="logout()" class="dropdown-item"><i class="fa fa-power-off"></i> Logout</a>
           <!-- text-->
         </div>
       </div>
@@ -41,13 +40,12 @@
         <li class="nav-devider"></li>
         <li class="nav-small-cap">PERSONAL</li>
         <li [class.active]="showMenu === 'start'">
-          <a routerLink="/starter" (click)="addExpandClass('start')" [routerLinkActive]="['router-link-active']"><i class="icon-speedometer"></i><span
-              class="hide-menu">Starter Page</span></a>
+          <a routerLink="/home" (click)="addExpandClass('start')" [routerLinkActive]="['router-link-active']"><i class="icon-home"></i><span
+              class="hide-menu">Home</span></a>
         </li>
-        <li class="nav-small-cap">UI COMPONENTS</li>
         <li>
           <a routerLink="/accordion" (click)="addExpandClass('component')" [routerLinkActive]="['router-link-active']"><i
-              class="mdi mdi-equal"></i><span class="hide-menu">Accordion</span></a>
+              class="icon-pencil"></i><span class="hide-menu">Add Recipe</span></a>
         </li>
         <li>
           <a routerLink="/alert" (click)="addExpandClass('component')" [routerLinkActive]="['router-link-active']"><i class="mdi mdi-message-bulleted"></i><span

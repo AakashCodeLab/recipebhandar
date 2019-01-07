@@ -1,14 +1,21 @@
 import { Component, AfterViewInit, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'ap-sidebar',
   templateUrl: './sidebar.component.html'
 })
-export class SidebarComponent implements AfterViewInit {
+export class SidebarComponent implements OnInit, AfterViewInit {
   // this is for the open close
+  constructor(private router: Router) { }
   isActive = true;
   showMenu = '';
   showSubMenu = '';
+  userName = '';
+  ngOnInit() {
+    const obj1 = JSON.parse(localStorage.getItem('currentuser'));
+    this.userName = obj1.userName;
+  }
 
   addExpandClass(element: any) {
     if (element === this.showMenu) {
@@ -26,6 +33,10 @@ export class SidebarComponent implements AfterViewInit {
   }
   eventCalled() {
     this.isActive = !this.isActive;
+  }
+  logout() {
+    localStorage.removeItem('currentuser');
+    this.router.navigate(['/login']);
   }
 
   ngAfterViewInit() {

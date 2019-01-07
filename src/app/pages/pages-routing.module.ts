@@ -7,7 +7,7 @@ const routes: Routes = [
     {
         path: '',  canActivate: [AuthGuard], component: PageComponent,
         children: [
-            { path: 'starter', loadChildren: './starter/starter.module#StarterModule' },
+            { path: 'home', loadChildren: './starter/starter.module#StarterModule' },
             { path: 'accordion', loadChildren: './component/accordion/accordion.module#AccordionModule' },
             { path: 'alert', loadChildren: './component/alert/alert.module#NgAlertModule' },
             { path: 'carousel', loadChildren: './component/carousel/carousel.module#ButtonsModule' },
@@ -20,9 +20,7 @@ const routes: Routes = [
             { path: 'rating', loadChildren: './component/rating/rating.module#RatingModule' },
             { path: 'tabs', loadChildren: './component/tabs/tabs.module#TabsModule' },
             { path: 'timepicker', loadChildren: './component/timepicker/timepicker.module#TimepickerModule' },
-          { 'path': '', 'redirectTo': 'starter',
-            'pathMatch': 'full',
-          },
+            { path: '', redirectTo: 'home', pathMatch: 'full', },
         ]
     }
 ];

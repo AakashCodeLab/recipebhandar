@@ -93,7 +93,7 @@
               "src/styles.css",
               "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/assets/css/style.css",
+              "src/assets/css/style.scss",
               "src/assets/css/colors/default.css"
             ],
             "assets": [
