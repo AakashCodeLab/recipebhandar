@@ -19,6 +19,7 @@
                       </button>
                     </div>
                   </label>
+
                   <button class="add">Add Ingredient</button>
                   <label for="">Recipe:</label>
                   <textarea name="howto" cols="30" rows="20"></textarea>
@@ -28,8 +29,8 @@
                 </form>
               </section>
                 <!--<h3 class="card-title">Toggle Accordion</h3>
-                <h6 class="card-subtitle">This is basic toggletype accordion</h6>
-                <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+                <h6 class="card-subtitle">This is basic toggletype addrecipe</h6>
+                <ngb-addrecipe #acc="ngbAccordion" activeIds="ngb-panel-0">
 				  <ngb-panel title="Simple">
 				    <ng-template ngbPanelContent>
 				      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
@@ -63,15 +64,15 @@
 				      labore sustainable VHS.
 				    </ng-template>
 				  </ngb-panel>
-				</ngb-accordion>-->
+				</ngb-addrecipe>-->
 
             </div>
         </div>
     <!--    <div class="card">
         	<div class="card-body">
         		<h3 class="card-title">Accordion</h3>
-                <h6 class="card-subtitle">This is One open panel accordion</h6>
-        		<ngb-accordion [closeOthers]="true" activeIds="static-1" class="nav-accordion">
+                <h6 class="card-subtitle">This is One open panel addrecipe</h6>
+        		<ngb-addrecipe [closeOthers]="true" activeIds="static-1" class="nav-addrecipe">
 				  <ngb-panel id="static-1" title="Simple">
 				    <ng-template ngbPanelContent>
 				      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
@@ -105,14 +106,14 @@
 				      labore sustainable VHS.
 				    </ng-template>
 				  </ngb-panel>
-				</ngb-accordion>
+				</ngb-addrecipe>
         	</div>
         </div>
         <div class="card">
         	<div class="card-body">
         		<h3 class="card-title">Toggle Panel</h3>
-                <h6 class="card-subtitle">This is toggle panel accordion</h6>
-                <ngb-accordion #acc="ngbAccordion">
+                <h6 class="card-subtitle">This is toggle panel addrecipe</h6>
+                <ngb-addrecipe #acc="ngbAccordion">
 				  <ngb-panel id="toggle-1" title="First panel">
 				    <ng-template ngbPanelContent>
 				      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
@@ -133,7 +134,7 @@
 				      labore sustainable VHS.
 				    </ng-template>
 				  </ngb-panel>
-				</ngb-accordion>
+				</ngb-addrecipe>
 
 				<p>
 				  <button class="btn btn-sm btn-outline-primary" (click)="acc.toggle('toggle-1')">Toggle first</button>
@@ -144,8 +145,8 @@
         <div class="card">
         	<div class="card-body">
         		<h3 class="card-title">Prevent panel toggle</h3>
-                <h6 class="card-subtitle">This is prevent toggle panel accordion</h6>
-                <ngb-accordion (panelChange)="beforeChange($event)">
+                <h6 class="card-subtitle">This is prevent toggle panel addrecipe</h6>
+                <ngb-addrecipe (panelChange)="beforeChange($event)">
 				  <ngb-panel id="preventchange-1" title="Simple">
 				    <ng-template ngbPanelContent>
 				      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
@@ -176,7 +177,7 @@
 				      labore sustainable VHS.
 				    </ng-template>
 				  </ngb-panel>
-				</ngb-accordion>
+				</ngb-addrecipe>
             </div>
         </div>   -->
     </div>

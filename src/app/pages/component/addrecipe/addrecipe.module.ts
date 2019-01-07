@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
-import { NgbdAccordionBasic } from './accordion.component';
+import { NgbdAddRecipeBasic} from './addrecipe.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -10,19 +10,19 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 const routes: Routes = [{
 	path: '',
 	data: {
-      title: 'Accordion',
-      urls: [{title: 'Dashboard', url: '/'},{title: 'ngComponent'},{title: 'Accordion'}]
+      title: 'Add Recipe',
+      urls: [{title: 'Dashboard', url: '/'},{title: 'ngComponent'},{title: 'Add Recipe'}]
     },
-	component: NgbdAccordionBasic
+	component: NgbdAddRecipeBasic
 }];
 
 @NgModule({
 	imports: [
     	FormsModule,
-    	CommonModule, 
+    	CommonModule,
       NgbModule.forRoot(),
     	RouterModule.forChild(routes)
     ],
-	declarations: [NgbdAccordionBasic]
+	declarations: [NgbdAddRecipeBasic]
 })
-export class AccordionModule { }
+export class AddrecipeModule { }

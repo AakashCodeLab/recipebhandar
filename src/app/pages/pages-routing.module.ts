@@ -8,7 +8,7 @@ const routes: Routes = [
         path: '',  canActivate: [AuthGuard], component: PageComponent,
         children: [
             { path: 'home', loadChildren: './starter/starter.module#StarterModule' },
-            { path: 'accordion', loadChildren: './component/accordion/accordion.module#AccordionModule' },
+            { path: 'accordion', loadChildren: './component/addrecipe/addrecipe.module#AddrecipeModule' },
             { path: 'alert', loadChildren: './component/alert/alert.module#NgAlertModule' },
             { path: 'carousel', loadChildren: './component/carousel/carousel.module#ButtonsModule' },
             { path: 'datepicker', loadChildren: './component/datepicker/datepicker.module#DatepickerModule' },
