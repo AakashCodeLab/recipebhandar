@@ -1,2 +1,9 @@
 
-<router-outlet></router-outlet>
+<div *ngIf="isConnected">
+  <router-outlet></router-outlet>
+</div>
+<div *ngIf="!isConnected" >
+  <app-offline></app-offline>
+</div>
+
+

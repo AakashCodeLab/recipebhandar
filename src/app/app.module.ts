@@ -25,8 +25,9 @@ import {
   MatSnackBarModule,
   MatSnackBar
 } from '@angular/material';
+import {OfflineComponent} from './offline/offline.component';
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, OfflineComponent],
   imports: [ BrowserAnimationsModule, BrowserModule, FormsModule,
     HttpClientModule, MatToolbarModule,
     MatButtonModule,

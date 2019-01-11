@@ -11,7 +11,8 @@
           "/*.css",
           "/*.js",
           "/*.jpg",
-          "/*.json"
+          "/*.json",
+          "/assets/**"
         ],
         "urls": [
           "https://fonts.googleapis.com/**",
