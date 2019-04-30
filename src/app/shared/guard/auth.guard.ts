@@ -9,17 +9,16 @@ export class AuthGuard implements CanActivate {
 
     canActivate() {
         if (localStorage.getItem('currentuser')) {
-          const obj1 = JSON.parse(localStorage.getItem('currentuser'));
+        /*  const obj1 = JSON.parse(localStorage.getItem('currentuser'));
           const  registeruser = JSON.parse(localStorage.getItem('isLoggedin'));
           console.log(registeruser)
           const  self = this;
           const verified = registeruser.some(function (obj) {
             return obj.userName === obj1.userName &&  obj.password ===  obj1.password ;
-          })
+          })*/
 
-          if (verified) {
             return true;
-          }
+
      }
 
         this.router.navigate(['/login']);

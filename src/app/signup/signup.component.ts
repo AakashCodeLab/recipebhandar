@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {MustMatch} from '../_helpers/must-match.validator';
 import {Router} from '@angular/router';
+import {AuthenticationService} from '../services/authentication.service';
 @Component({
     selector: 'app-signup',
     templateUrl: './signup.component.html',
@@ -10,7 +11,7 @@ import {Router} from '@angular/router';
 export class SignupComponent implements OnInit {
   registerForm: FormGroup;
   submitted = false;
-    constructor(public router: Router, private formBuilder: FormBuilder) { }
+    constructor(public router: Router, private formBuilder: FormBuilder, public authentication: AuthenticationService) { }
 
     ngOnInit() {
       this.registerForm = this.formBuilder.group({
@@ -31,15 +32,19 @@ export class SignupComponent implements OnInit {
     if (this.registerForm.invalid) {
       return;
     }
-    let users = [];
-    const currentuser = [];
+   // const users = [];
+  //  const currentuser = [];
     const loginobj = {
       userName: '',
-      password: ''
+      password: '',
+      email: ''
     };
+
     loginobj.userName = this.registerForm.value.userName;
     loginobj.password = this.registerForm.value.password;
-    if (JSON.parse(localStorage.getItem('isLoggedin'))) {
+    loginobj.email = this.registerForm.value.email;
+    this.authentication.signUp(loginobj);
+/*    if (JSON.parse(localStorage.getItem('isLoggedin'))) {
       users = JSON.parse(localStorage.getItem('isLoggedin'));
       if (users.length > 0) {
         users.push(loginobj);
@@ -47,8 +52,8 @@ export class SignupComponent implements OnInit {
         users.push(loginobj);
       }}else {
       users.push(loginobj);
-    }
-    localStorage.setItem('isLoggedin',  JSON.stringify(users));
+    }*/
+    // localStorage.setItem('isLoggedin',  JSON.stringify(users));
     localStorage.setItem('currentuser',  JSON.stringify(loginobj));
     this.router.navigate(['/login']);
   }

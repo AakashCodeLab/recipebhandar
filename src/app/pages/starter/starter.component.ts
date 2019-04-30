@@ -1,6 +1,7 @@
 import {Component, AfterViewInit, OnInit} from '@angular/core';
 import {RecipedataService} from '../../services/recipedata.service';
 import {Router} from '@angular/router';
+import Recipe from '../../Recipe';
 
 @Component({
   templateUrl: './starter.component.html',
@@ -8,16 +9,32 @@ import {Router} from '@angular/router';
 })
 export class StarterComponent implements  OnInit , AfterViewInit {
   finaldata;
-    constructor(public router: Router, private data: RecipedataService) {
+    constructor(public router: Router, private recipeservice: RecipedataService) {
     }
   ngOnInit() {
-    const data = this.data.recipedata();
-    console.log('home', data.recipes);
-    this.finaldata = data.recipes;
-    localStorage.setItem('prefixed-data', JSON.stringify( this.finaldata));
-    if (this.router.url === '/') {
-      this.router.navigate(['/home']);
-    }
+    this.getData();
+  }
+
+  getData() {
+    this.recipeservice
+      .getRecipes()
+      .subscribe((data: Recipe[]) => {
+        this.finaldata = data;
+        localStorage.setItem('recipes', JSON.stringify( this.finaldata));
+        if (this.router.url === '/') {
+          this.router.navigate(['/home']);
+        }
+      });
+  }
+  deleteRecipe(id) {
+    this.recipeservice.deleteRecipe(id).subscribe(res => {
+      console.log('Deleted');
+      this.getData();
+    });
+  }
+  view(data, i) {
+  }
+  edit(data, i) {
   }
   ngAfterViewInit() {}
 }

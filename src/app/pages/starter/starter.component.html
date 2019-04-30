@@ -1,9 +1,9 @@
 <section id="Home">
   <div class="container">
-    <a *ngFor="let data of finaldata; let i = index;" (click)="view(data,i)">
+    <a *ngFor="let data of finaldata; let i = index;" (click)="view(data._id)">
       <div class="recipe">
-        <i (click)="delete(data,i)" class="icon">×</i>
-        <a (click)="edit(data,i)">
+        <i (click)="deleteRecipe(data._id)" class="icon">×</i>
+        <a (click)="edit(data._id)">
           <i class="icon2">✍</i>
         </a>
         <img src={{data.url}} alt="{{data.name}}">

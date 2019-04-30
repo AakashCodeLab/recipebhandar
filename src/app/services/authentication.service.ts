@@ -1,24 +1,39 @@
 import { Injectable } from '@angular/core';
-import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import 'rxjs/add/observable/of';
-import {delay} from 'rxjs/operators';
+import {Observable} from 'rxjs';
+import 'rxjs/add/operator/map'
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
   fakeResponse = {res: true};
-
+  uri = 'user';
   constructor(  private httpClient: HttpClient) {
     localStorage.setItem('cmLocal', JSON.stringify(this.fakeResponse));
 
+  }
+  signUp(obj) {
+    this.httpClient.post(`${this.uri}/signup`, obj)
+      .subscribe(res => console.log('Done'));
   }
 
   /**
    * LOGIN FUNCTION
    */
+  login(userName: string, password: string): Observable<any> {
+    const body = { userName: userName, password: password };
 
-  login = Observable.of(this.fakeResponse).pipe(
-    delay( 3000 )
-  );
+    return this.httpClient.post<any>(`${this.uri}/login`, body)
+      .map(response => {
+        const resdata = response;
+        if (resdata && resdata.token) {
+          localStorage.setItem('cmLocal', JSON.stringify(resdata));
+        }
+        return resdata;
+      });
+  };
+
 }
+
+
