@@ -4,7 +4,7 @@
             <div class="card-body">
 
               <section>
-                <form id="addItem">
+                <!-- <form id="addItem">
                   <label>Athor:</label>
                   <input type="text" name="author" value="abc">
                   <label>Recipe Name:</label>
@@ -26,7 +26,62 @@
                   <label>Add Image (URL)</label>
                   <input type="text" name="url" value="https://">
                   <button class="submit" type="submit">Submit</button>
-                </form>
+                </form> -->
+
+
+
+
+                <div class="container">
+                  <div class="row">
+                    <div class="col-10">
+                      <div class="jumbotron">
+                        <h2>Add Recipe</h2>
+                        <form name="form" [formGroup]="form" (ngSubmit)="form.valid && onSubmit()">
+                          <div class="form-group">
+                            <label for="author">Athor</label>
+                            <input type="text"  class="form-control" formControlName="author" [ngClass]="{'is-invalid':form.get('author').touched && form.get('author').invalid}" required />
+                            <div class="invalid-feedback">
+                              <div>Athor Name is required</div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="recipeName">Recipe Name:</label>
+                            <input type="text" class="form-control" formControlName="recipeName" [ngClass]="{'is-invalid':form.get('recipeName').touched && form.get('recipeName').invalid}" required />
+                            <div class="invalid-feedback">
+                              <div>Recipe Name is required</div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="recipeDetail">Recipe Details:</label>
+                            <input type="text" class="form-control" formControlName="recipeDetail" [ngClass]="{'is-invalid':form.get('recipeDetail').touched && form.get('recipeDetail').invalid}" required />
+                            <div class="invalid-feedback">
+                              <div>Recipe Detailsis required</div>
+                            </div>
+                          </div>
+
+                          <div class="form-group">
+                            <label for="instructions">Instructions:</label>
+                            <textarea type="text" class="form-control" formControlName="instructions" [ngClass]="{'is-invalid':form.get('instructions').touched && form.get('instructions').invalid}" required ></textarea>
+                            <div class="invalid-feedback">
+                              <div>Recipe Detailsis required</div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="url">Add Image (URL):</label>
+                            <input type="text" class="form-control" formControlName="url" [ngClass]="{'is-invalid':form.get('url').touched && form.get('url').invalid}" required />
+                            <div class="invalid-feedback">
+                              <div>Image Url is required</div>
+                            </div>
+                          </div>
+                      
+                          <div class="form-group">
+                            <button class="btn btn-primary"  [disabled]="!form.valid">Add </button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </section>
             </div>
         </div>

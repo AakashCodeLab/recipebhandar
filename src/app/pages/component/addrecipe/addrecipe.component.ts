@@ -1,6 +1,7 @@
 import { Component} from '@angular/core';
 import {NgbPanelChangeEvent} from '@ng-bootstrap/ng-bootstrap';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder,FormControl, FormGroup, Validators } from '@angular/forms';
+import {RecipedataService} from '../../../services/recipedata.service';
 
 @Component({
 	selector: 'ngbd-accordion-basic',
@@ -9,7 +10,26 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class NgbdAddRecipeBasic {
 
-  constructor( private formBuilder: FormBuilder) {}
+  form = new FormGroup({
+    author: new FormControl('', Validators.required),
+    recipeName: new FormControl('', Validators.required),
+    recipeDetail: new FormControl('', Validators.required),
+    instructions: new FormControl('', Validators.required),
+    url: new FormControl('', Validators.required),
+   });
+    constructor( private recipeservice: RecipedataService,  ) { }
+  
+    get author(){
+      return this.form.get('author')
+    }
+    ngOnInit() {
+    }
+  
+    onSubmit(){
+    
+      console.log(this.form.value);
+      this.recipeservice.addRecipe(this.form.value);
+    }
   
 
 }

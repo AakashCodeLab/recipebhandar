@@ -3,8 +3,42 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { NgbdAddRecipeBasic} from './addrecipe.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { 
+  MatAutocompleteModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatSortModule,
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule,
+  MatStepperModule,
+} from '@angular/material';
 
 
 const routes: Routes = [{
@@ -19,9 +53,41 @@ const routes: Routes = [{
 @NgModule({
 	imports: [
     	FormsModule,
-    	CommonModule,
+			CommonModule,
+			ReactiveFormsModule,
       NgbModule.forRoot(),
-    	RouterModule.forChild(routes)
+			RouterModule.forChild(routes),
+			MatAutocompleteModule,
+			MatButtonModule,
+			MatButtonToggleModule,
+			MatCardModule,
+			MatCheckboxModule,
+			MatChipsModule,
+			MatDatepickerModule,
+			MatDialogModule,
+			MatExpansionModule,
+			MatGridListModule,
+			MatIconModule,
+			MatInputModule,
+			MatListModule,
+			MatMenuModule,
+			MatNativeDateModule,
+			MatPaginatorModule,
+			MatProgressBarModule,
+			MatProgressSpinnerModule,
+			MatRadioModule,
+			MatRippleModule,
+			MatSelectModule,
+			MatSidenavModule,
+			MatSliderModule,
+			MatSlideToggleModule,
+			MatSnackBarModule,
+			MatSortModule,
+			MatTableModule,
+			MatTabsModule,
+			MatToolbarModule,
+			MatTooltipModule,
+			MatStepperModule,
     ],
 	declarations: [NgbdAddRecipeBasic]
 })

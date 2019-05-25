@@ -27,6 +27,7 @@ export class AppComponent implements OnInit {
       this.swUpdate.checkForUpdate().then(() => {
 
         const snack = this.snackbar.open('Update Available', 'Reload', {
+          
           panelClass: ['blue-snackbar']
         });
         snack

@@ -8,7 +8,7 @@ import 'rxjs/add/operator/map'
 })
 export class AuthenticationService {
   fakeResponse = {res: true};
-  uri = 'user';
+  uri = 'http://localhost:8080/user';
   constructor(  private httpClient: HttpClient) {
     localStorage.setItem('cmLocal', JSON.stringify(this.fakeResponse));
 
