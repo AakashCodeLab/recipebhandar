@@ -1,5 +1,6 @@
 import { Component} from '@angular/core';
 import {NgbPanelChangeEvent} from '@ng-bootstrap/ng-bootstrap';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
 	selector: 'ngbd-accordion-basic',
@@ -7,14 +8,9 @@ import {NgbPanelChangeEvent} from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./addrecipe.component.scss']
 })
 export class NgbdAddRecipeBasic {
-   beforeChange($event: NgbPanelChangeEvent) {
 
-    if ($event.panelId === 'preventchange-2') {
-      $event.preventDefault();
-    }
+  constructor( private formBuilder: FormBuilder) {}
+  
 
-    if ($event.panelId === 'preventchange-3' && $event.nextState === false) {
-      $event.preventDefault();
-    }
-  };
 }
+
