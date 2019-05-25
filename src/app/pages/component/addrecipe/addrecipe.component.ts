@@ -12,7 +12,7 @@ export class NgbdAddRecipeBasic {
 
   form = new FormGroup({
     author: new FormControl('', Validators.required),
-    recipeName: new FormControl('', Validators.required),
+    name: new FormControl('', Validators.required),
     recipeDetail: new FormControl('', Validators.required),
     instructions: new FormControl('', Validators.required),
     url: new FormControl('', Validators.required),
