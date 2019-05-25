@@ -7,7 +7,7 @@ import {MatSnackBar} from '@angular/material';
 })
 export class RecipedataService {
 
-  uri = 'http://localhost:8080/recipe';
+  uri = 'recipe';
   versionuri = 'getversion';
 
   constructor(private http: HttpClient,private snackbar: MatSnackBar) { }
@@ -33,6 +33,12 @@ export class RecipedataService {
           panelClass: ['blue-snackbar']
         });
         console.log('Done');
-      },(err) => {console.log(err)});
+      },(err) => {
+        const snack = this.snackbar.open('Sorry ,for server error','', {
+          duration: 500,
+          panelClass: ['blue-snackbar']
+        });
+        console.log(err)
+      });
   }
 }
