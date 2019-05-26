@@ -1,11 +1,8 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
-// import custom validator to validate that password and confirm password fields match
-import { MustMatch } from '../_helpers/must-match.validator';
 import { Router } from '@angular/router';
 import {AuthenticationService} from '../services/authentication.service';
-
+import {MatSnackBar} from '@angular/material';
 @Component({
     selector: 'app-login',
     templateUrl: './login.component.html',
@@ -15,15 +12,11 @@ export class LoginComponent implements OnInit, AfterViewInit {
   loginForm: FormGroup;
   submitted = false;
   errorvalue;
-    constructor(public router: Router, private formBuilder: FormBuilder, public authentication: AuthenticationService) {}
+    constructor(public router: Router, private formBuilder: FormBuilder, public authentication: AuthenticationService,  private snackbar: MatSnackBar) {}
 
     ngOnInit() {
       if (localStorage.getItem('currentuser')) {
-
-
-       // if (verified) {
           this.router.navigate(['/home']);
-       // }
       }
 
       this.loginForm = this.formBuilder.group({
@@ -67,6 +60,10 @@ export class LoginComponent implements OnInit, AfterViewInit {
             }
           },
           error => {
+            const snack = this.snackbar.open('Something went wrong','', {
+              duration: 500,
+              panelClass: ['red-snackbar']
+            });
           console.log('error', error);
           });
 

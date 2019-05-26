@@ -9,7 +9,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './shared/guard/auth.guard';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {SwPush, SwUpdate} from '@angular/service-worker';
+import { SwUpdate} from '@angular/service-worker';
 import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';

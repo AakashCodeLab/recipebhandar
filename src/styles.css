@@ -3,6 +3,15 @@
   color:white;
 }
 
+.green-snackbar {
+  background: rgb(41, 177, 86);
+  color:white;
+}
+.red-snackbar {
+  background: rgb(216, 8, 8);
+  color:white;
+}
+
 .mat-button-focus-overlay {
   background: #fff;
 }

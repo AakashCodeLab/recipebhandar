@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {MustMatch} from '../_helpers/must-match.validator';
 import {Router} from '@angular/router';
 import {AuthenticationService} from '../services/authentication.service';
+import {MatSnackBar} from '@angular/material';
 @Component({
     selector: 'app-signup',
     templateUrl: './signup.component.html',
@@ -11,7 +12,7 @@ import {AuthenticationService} from '../services/authentication.service';
 export class SignupComponent implements OnInit {
   registerForm: FormGroup;
   submitted = false;
-    constructor(public router: Router, private formBuilder: FormBuilder, public authentication: AuthenticationService) { }
+    constructor(public router: Router, private formBuilder: FormBuilder, public authentication: AuthenticationService, private snackbar: MatSnackBar) { }
 
     ngOnInit() {
       this.registerForm = this.formBuilder.group({
@@ -32,8 +33,7 @@ export class SignupComponent implements OnInit {
     if (this.registerForm.invalid) {
       return;
     }
-   // const users = [];
-  //  const currentuser = [];
+ 
     const loginobj = {
       userName: '',
       password: '',
@@ -43,17 +43,19 @@ export class SignupComponent implements OnInit {
     loginobj.userName = this.registerForm.value.userName;
     loginobj.password = this.registerForm.value.password;
     loginobj.email = this.registerForm.value.email;
-    this.authentication.signUp(loginobj);
-/*    if (JSON.parse(localStorage.getItem('isLoggedin'))) {
-      users = JSON.parse(localStorage.getItem('isLoggedin'));
-      if (users.length > 0) {
-        users.push(loginobj);
-      }else {
-        users.push(loginobj);
-      }}else {
-      users.push(loginobj);
-    }*/
-    // localStorage.setItem('isLoggedin',  JSON.stringify(users));
+    this.authentication.signUp(loginobj).subscribe(res =>{
+      const snack = this.snackbar.open('Welcome to RecipeBhandar','', {
+        duration: 1000,
+        panelClass: ['green-snackbar']
+      });
+      this.router.navigate(['/home']);
+    },(err) => {
+      const snack = this.snackbar.open('Something went wrong','', {
+        duration: 500,
+        panelClass: ['red-snackbar']
+      });
+      console.log(err)
+    });
     localStorage.setItem('currentuser',  JSON.stringify(loginobj));
     this.router.navigate(['/login']);
   }

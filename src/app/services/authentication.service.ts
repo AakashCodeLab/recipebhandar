@@ -8,14 +8,15 @@ import 'rxjs/add/operator/map'
 })
 export class AuthenticationService {
   fakeResponse = {res: true};
-  uri = 'user';
+  uri = 'http://localhost:8080/user';
   constructor(  private httpClient: HttpClient) {
-    localStorage.setItem('cmLocal', JSON.stringify(this.fakeResponse));
-
   }
+
+   /**
+   * SIGNUP FUNCTION
+   */
   signUp(obj) {
-    this.httpClient.post(`${this.uri}/signup`, obj)
-      .subscribe(res => console.log('Done'));
+    return this.httpClient.post(`${this.uri}/signup`, obj)
   }
 
   /**
@@ -26,11 +27,7 @@ export class AuthenticationService {
 
     return this.httpClient.post<any>(`${this.uri}/login`, body)
       .map(response => {
-        const resdata = response;
-        if (resdata && resdata.token) {
-          localStorage.setItem('cmLocal', JSON.stringify(resdata));
-        }
-        return resdata;
+        return response;
       });
   };
 

@@ -8,7 +8,7 @@ import Recipe from '../../Recipe';
   styleUrls: ['./starter.component.scss']
 })
 export class StarterComponent implements  OnInit , AfterViewInit {
-  finaldata;
+  recipeData:Recipe[];
     constructor(public router: Router, private recipeservice: RecipedataService) {
     }
   ngOnInit() {
@@ -19,8 +19,7 @@ export class StarterComponent implements  OnInit , AfterViewInit {
     this.recipeservice
       .getRecipes()
       .subscribe((data: Recipe[]) => {
-        this.finaldata = data;
-        localStorage.setItem('recipes', JSON.stringify( this.finaldata));
+        this.recipeData = data;
         if (this.router.url === '/') {
           this.router.navigate(['/home']);
         }

@@ -11,9 +11,8 @@ import {RecipedataService} from './services/recipedata.service';
 })
 export class AppComponent implements OnInit {
   status = 'ONLINE';
-  version;
   isConnected = true;
-  constructor(private swUpdate: SwUpdate, private swPush: SwPush, private snackbar: MatSnackBar, private connectionService: ConnectionService, private bs: RecipedataService
+  constructor(private swUpdate: SwUpdate, private swPush: SwPush, private snackbar: MatSnackBar, private connectionService: ConnectionService, private recipedataservice: RecipedataService
               ) {
     this.connectionService.monitor().subscribe(isConnected => {
       this.isConnected = isConnected;
@@ -43,11 +42,5 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.bs
-      .getVersion()
-      .subscribe((data) => {
-        this.version = data;
-        console.log(this.version);
-      });
   }
 }
