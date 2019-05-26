@@ -1,28 +1,11 @@
-# AdminAngular
+# recipebhandar
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.2.
+This was built using Angular 7 with offline support using pwa , to view live projects visit http://recipebhandar.herokuapp.com/
 
-## Development server
+We carry our phones with us everywhere we go — whether it be our living room or workspace — so why shouldn’t we venture into our kitchens with them?
+recipebhandar app are the next step in the complete mobile takeover, offering step-by-step instructions on how to make a fine oven-fried chimichanga, curate a weekly meal plan, and or even get prepared for the future of food.
+You can create an account and save your favorite recipes into custom collections, and rate and save recipes for later.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+![screencapture-recipebhandar-herokuapp-login-2019-05-26-12_34_01](https://user-images.githubusercontent.com/20945837/58378589-0a96b300-7fb4-11e9-8395-53344edafaaa.png)
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+![screencapture-recipebhandar-herokuapp-home-2019-05-26-13_04_40](https://user-images.githubusercontent.com/20945837/58378757-eb4d5500-7fb6-11e9-8455-58a34351ddbf.png)
