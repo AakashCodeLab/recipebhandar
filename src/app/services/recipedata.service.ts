@@ -8,7 +8,7 @@ import {Router} from '@angular/router';
 })
 export class RecipedataService {
 
-  uri = 'http://localhost:8080/recipe';
+  uri = 'recipe';
 
   constructor(private http: HttpClient,private snackbar: MatSnackBar,public router: Router) { }
   getRecipes() {
