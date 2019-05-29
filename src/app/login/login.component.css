@@ -54,11 +54,12 @@
   z-index: -1;
   width: 300%;
   height: 100%;
-  background: #a64bf4;
-  background: linear-gradient(to left,#00dbde, #fc00ff, #00dbde, #fc00ff);
+ /* background: #a64bf4;*/
+  background: #f4b905;
+/*  background: linear-gradient(to left,#00dbde, #fc00ff, #00dbde, #fc00ff);
   background: -webkit-linear-gradient(to left, #00dbde, #fc00ff, #00dbde, #fc00ff);
   background: -o-linear-gradient(to left, #00dbde, #fc00ff, #00dbde, #fc00ff);
-  background: -moz-linear-gradient(to left, #00dbde, #fc00ff, #00dbde, #fc00ff);
+  background: -moz-linear-gradient(to left, #00dbde, #fc00ff, #00dbde, #fc00ff);*/
   top: 0;
   left: -100%;
   -webkit-transition: all 0.4s;
@@ -69,12 +70,12 @@
 }
 
 .login100-form-bgbtn:hover {
-  background: linear-gradient(to right,#00dbde, #fc00ff, #00dbde, #fc00ff);
+ /* background: linear-gradient(to right,#00dbde, #fc00ff, #00dbde, #fc00ff);
   background: -webkit-linear-gradient(to right, #00dbde, #fc00ff, #00dbde, #fc00ff);
   background: -o-linear-gradient(to right, #00dbde, #fc00ff, #00dbde, #fc00ff);
   background: -moz-linear-gradient(to right, #00dbde, #fc00ff, #00dbde, #fc00ff);
   top: 0;
-  left: -100%;
+  left: -100%;*/
 }
 
 
