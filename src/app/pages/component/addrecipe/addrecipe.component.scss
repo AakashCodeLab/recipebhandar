@@ -77,3 +77,18 @@
   }
 
 }
+
+
+
+@media all and (min-width: 768px) {
+  .prep-time {
+   display: flex;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .cook-time {
+    padding: 0;
+  }
+}
+

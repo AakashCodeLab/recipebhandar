@@ -6,15 +6,24 @@ let Recipe = new Schema({
   name: {
     type: String
   },
-  desc: {
+  recipeDetail: {
     type: String
   },
   ingredients: {
-    type: [String]
+    type: [{
+      ingredient:String
+    }]
   },
-  howto: {
+  instructions: {
     type: String
   },
+  preptime: {
+    type: Number
+  },
+  cooktime: {
+    type: Number
+  },
+
   url: {
     type: String
   },

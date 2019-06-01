@@ -8,7 +8,7 @@ import Recipe from '../../Recipe';
   styleUrls: ['./starter.component.scss']
 })
 export class StarterComponent implements  OnInit , AfterViewInit {
-  recipeData:Recipe[];
+  recipeData: Recipe[];
     constructor(public router: Router, private recipeservice: RecipedataService) {
     }
   ngOnInit() {
@@ -33,7 +33,9 @@ export class StarterComponent implements  OnInit , AfterViewInit {
   }
   view(data, i) {
   }
-  edit(data, i) {
+  edit( recipeId) {
+      console.log(recipeId);
+    this.router.navigate(['/edit', recipeId]);
   }
   ngAfterViewInit() {}
 }

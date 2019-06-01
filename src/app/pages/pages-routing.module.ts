@@ -9,7 +9,9 @@ const routes: Routes = [
         children: [
             { path: 'home', loadChildren: './starter/starter.module#StarterModule' },
             { path: 'add', loadChildren: './component/addrecipe/addrecipe.module#AddrecipeModule' },
-            { path: '', redirectTo: 'home', pathMatch: 'full', },
+          { path: 'edit/:id', loadChildren: './component/addrecipe/addrecipe.module#AddrecipeModule' },
+
+          { path: '', redirectTo: 'home', pathMatch: 'full', },
         ]
     }
 ];

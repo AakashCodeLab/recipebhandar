@@ -38,15 +38,22 @@ recipeRoutes.route('/edit/:id').get(function (req, res) {
 });
 
 //  Defined update route
-recipeRoutes.route('/update/:id').post(function (req, res) {
-    Recipe.findById(req.params.id, function(err, recipe) {
+recipeRoutes.route('/update/:id').put(function (req, res) {
+  console.log(req.params.id);
+  console.log(req.body);
+
+  Recipe.findById(req.params.id, function(err, recipe) {
     if (!recipe)
       return next(new Error('Could not load Document'));
     else {
-        recipe.person_name = req.body.person_name;
-        recipe.recipe_name = req.body.recipe_name;
-        recipe.recipe_gst_number = req.body.recipe_gst_number;
-
+        recipe.author = req.body.author;
+        recipe.name = req.body.name;
+        recipe.recipeDetail = req.body.recipeDetail;
+        recipe.ingredients = req.body.ingredients;
+        recipe.instructions = req.body.instructions;
+        recipe.preptime = req.body.preptime;
+        recipe.cooktime = req.body.cooktime;
+        recipe.url = req.body.url;
         recipe.save().then(recipe => {
           res.json('Update complete');
       })
