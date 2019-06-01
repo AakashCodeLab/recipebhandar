@@ -5,8 +5,8 @@ import {RecipedataService} from '../../../services/recipedata.service';
 import {MatSnackBar} from '@angular/material';
 import {ActivatedRoute, Router} from '@angular/router';
 @Component({
-	selector: 'ngbd-accordion-basic',
-	templateUrl: 'addrecipe.component.html',
+  selector: 'ngbd-accordion-basic',
+  templateUrl: 'addrecipe.component.html',
   styleUrls: ['./addrecipe.component.scss']
 })
 export class NgbdAddRecipeBasic implements OnInit {
@@ -34,8 +34,8 @@ export class NgbdAddRecipeBasic implements OnInit {
           name: '',
           recipeDetail: '',
           ingredients: [ {
-              ingredient: ''
-            }] ,
+            ingredient: ''
+          }] ,
           instructions: '',
           preptime: 0,
           cooktime: 0,
@@ -72,16 +72,16 @@ export class NgbdAddRecipeBasic implements OnInit {
   }
 
   editRecipe(recipe) {
-  this.form.patchValue({
-    author: recipe.author,
-    name: recipe.name,
-    recipeDetail: recipe.recipeDetail,
-    instructions: recipe.instructions,
-    preptime: recipe.preptime,
-    cooktime: recipe.cooktime,
-    url: recipe.url,
-  });
-  this.form.setControl('ingredients', this.setExistingiIngredients(recipe.ingredients));
+    this.form.patchValue({
+      author: recipe.author,
+      name: recipe.name,
+      recipeDetail: recipe.recipeDetail,
+      instructions: recipe.instructions,
+      preptime: recipe.preptime,
+      cooktime: recipe.cooktime,
+      url: recipe.url,
+    });
+    this.form.setControl('ingredients', this.setExistingiIngredients(recipe.ingredients));
   }
 
   setExistingiIngredients(ingredients): FormArray {
@@ -93,11 +93,11 @@ export class NgbdAddRecipeBasic implements OnInit {
     });
     return formArray;
   }
-    get author(){
-      return this.form.get('author');
-    }
+  get author(){
+    return this.form.get('author');
+  }
 
-   ingredients() {
+  ingredients() {
     return this.formBuilder.group({
       ingredient: ['', Validators.required],
     });
@@ -114,8 +114,8 @@ export class NgbdAddRecipeBasic implements OnInit {
     control.push(this.ingredients());
   }
 
-    onSubmit() {
-      console.log(this.form.value);
+  onSubmit() {
+    console.log(this.form.value);
     this.mapFormValuesToRecipeModel();
     if (this.recipeId){
       this.recipeservice.updateRecipe(this.recipeDetails, this.recipeId).subscribe(res => {
@@ -147,7 +147,7 @@ export class NgbdAddRecipeBasic implements OnInit {
         console.log(err);
       });
     }
-    }
+  }
   mapFormValuesToRecipeModel() {
     this.recipeDetails.author = this.form.value.author;
     this.recipeDetails.name = this.form.value.name;
@@ -157,6 +157,9 @@ export class NgbdAddRecipeBasic implements OnInit {
     this.recipeDetails.preptime = this.form.value.preptime;
     this.recipeDetails.cooktime = this.form.value.cooktime;
     this.recipeDetails.url = this.form.value.url;
+  }
+  getControls(frmGrp: FormGroup, key: string) {
+    return (<FormArray>frmGrp.controls[key]).controls;
   }
 }
 
