@@ -34,16 +34,16 @@
                             </div>
                           </div>
 
-                          <div formArrayName="ingredients" *ngFor="let ingredient of  form.controls['ingredients'].controls; let i=index">
+                          <div formArrayName="ingredients" *ngFor="let ingredient of  form['controls'].controls['ingredients'].controls; let i=index">
                             <div [formGroupName]="i">
                                 <div class="form-group">
 
                                     <label class="row col-sm-12" for="ingredients">Ingredients:</label>
 
-                                      <input [ngStyle]="{'width':form.controls['ingredients'].controls.length > 1 ? '74%' : '' }" type="text" class=" form-control" formControlName="ingredient" [ngClass]="{'is-invalid':ingredient.controls.ingredient.touched && ingredient.controls.ingredient.invalid}" required />
+                                      <input [ngStyle]="{'width':form['controls'].controls['ingredients'].controls.length > 1 ? '74%' : '' }" type="text" class=" form-control" formControlName="ingredient" [ngClass]="{'is-invalid':ingredient.controls.ingredient.touched && ingredient.controls.ingredient.invalid}" required />
 
 
-                                      <button  style="margin-left: 4px;" *ngIf="form.controls['ingredients'].controls.length > 1" (click)="removeIngredent(i)" type="button" name="remove" id="2" class="btn btn-danger btn_remove">X</button>
+                                      <button  style="margin-left: 4px;" *ngIf="form['controls'].controls['ingredients'].controls.length > 1" (click)="removeIngredent(i)" type="button" name="remove" id="2" class="btn btn-danger btn_remove">X</button>
 
                                     <div class="invalid-feedback">
                                       <div>Ingredients required</div>
