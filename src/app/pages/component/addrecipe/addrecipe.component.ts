@@ -103,13 +103,13 @@ export class NgbdAddRecipeBasic implements OnInit {
     });
   }
 
-  private removeIngredent(i: number) {
+   removeIngredent(i: number) {
     const control = <FormArray>this.form.controls['ingredients'];
     control.removeAt(i);
     control.markAsDirty();
     control.markAsTouched();
   }
-  private addIngredent() {
+   addIngredent() {
     const control = <FormArray>this.form.controls['ingredients'];
     control.push(this.ingredients());
   }
