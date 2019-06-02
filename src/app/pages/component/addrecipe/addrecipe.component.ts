@@ -4,6 +4,7 @@ import { Validators, FormBuilder, FormGroup, FormControl, FormArray  } from '@an
 import {RecipedataService} from '../../../services/recipedata.service';
 import {MatSnackBar} from '@angular/material';
 import {ActivatedRoute, Router} from '@angular/router';
+import {NgxSpinnerService} from 'ngx-spinner';
 @Component({
   selector: 'ngbd-accordion-basic',
   templateUrl: 'addrecipe.component.html',
@@ -17,9 +18,10 @@ export class NgbdAddRecipeBasic implements OnInit {
   recipeDetails;
   recipeId;
   constructor( private recipeservice: RecipedataService, private snackbar: MatSnackBar, public router: Router,
-               public  route: ActivatedRoute, private formBuilder: FormBuilder, ) { }
+               public  route: ActivatedRoute, private formBuilder: FormBuilder, private spinner: NgxSpinnerService ) { }
 
   ngOnInit() {
+   
     this.route.paramMap.subscribe(params => {
       this.recipeId = params.get('id');
       if (this.recipeId) {
@@ -58,11 +60,14 @@ export class NgbdAddRecipeBasic implements OnInit {
     });
   }
   getRecipeDeatailsById(recipeId) {
+    this.spinner.show();
     this.recipeservice.getRecipeDeatailsById(recipeId).subscribe(recipe => {
       console.log(recipe);
       this.editRecipe(recipe);
       this.recipeDetails = recipe;
-    },(err) => {
+      this.spinner.hide();
+    }, (err) => {
+      this.spinner.hide();
       const snack = this.snackbar.open('Sorry ,for server error', '', {
         duration: 500,
         panelClass: ['red-snackbar']

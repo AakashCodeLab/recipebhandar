@@ -33,7 +33,7 @@
 
                 <li>
                     <form role="search" class="app-search hidden-sm-down">
-                        <input type="text" placeholder="Search..." class="form-control"> <a href=""><i class="fa fa-search"></i></a> </form>
+                        <input name="searchRecipe" [(ngModel)]="searchRecipe" (keyup)="searchRecipes();" type="text" placeholder="Search..." class="form-control"> </form>
                 </li>
             </ul>
             <!-- ============================================================== -->

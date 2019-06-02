@@ -29,6 +29,10 @@ recipeRoutes.route('/').get(function (req, res) {
   });
 });
 
+
+
+
+
 // Defined edit route
 recipeRoutes.route('/edit/:id').get(function (req, res) {
   let id = req.params.id;
@@ -71,5 +75,51 @@ recipeRoutes.route('/delete/:id').get(function (req, res) {
         else res.json('Successfully removed');
     });
 });
+
+
+recipeRoutes.route('/search/:recipename')
+  .get(function(req, res) {
+
+    if(req.params.recipename==='all'){
+      Recipe.find(function (err, recipes){
+        if(err){
+          console.log(err);
+        }
+        else {
+          res.json(recipes);
+        }
+      });
+    }else{
+      var regex = new RegExp(req.params.recipename, "i") ;
+      query = { name: regex };
+
+      Recipe.find(query, function(err, recipe) {
+        if (err) {
+          res.json(err);
+        }
+
+        res.json(recipe);
+      });
+
+    }
+
+  });
+
+
+// //  Defined update route
+// recipeRoutes.route('/search/:recipename').get(function (req, res) {
+//   console.log(req.params.id);
+//
+//   Recipe.findById(req.params.id, function(err, recipe) {
+//     if (!recipe)
+//       return next(new Error('Could not load Document'));
+//     else {
+//
+//         .catch(err => {
+//           res.status(400).send("unable to update the database");
+//         });
+//     }
+//   });
+// });
 
 module.exports = recipeRoutes;

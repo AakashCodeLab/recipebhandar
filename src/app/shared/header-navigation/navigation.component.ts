@@ -1,5 +1,6 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {RecipedataService} from '../../services/recipedata.service';
 
 @Component({
   selector: 'ap-navigation',
@@ -8,15 +9,18 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 export class NavigationComponent implements AfterViewInit {
   name: string;
   showHide: boolean;
-
-  constructor() {
+  searchRecipe;
+  constructor(private recipeservice: RecipedataService) {
     this.showHide = true;
   }
 
   changeShowStatus() {
     this.showHide = !this.showHide;
   }
-
+  searchRecipes() {
+    console.log(this.searchRecipe);
+   this.recipeservice.sendSearchRecipe(this.searchRecipe);
+  }
   ngAfterViewInit() {
     $(function() {
       $('.preloader').fadeOut();

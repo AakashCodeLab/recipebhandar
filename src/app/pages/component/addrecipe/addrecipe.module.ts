@@ -39,6 +39,7 @@ import {
   MatTooltipModule,
   MatStepperModule,
 } from '@angular/material';
+import {NgxSpinnerModule} from 'ngx-spinner';
 
 
 const routes: Routes = [{
@@ -88,6 +89,7 @@ const routes: Routes = [{
 			MatToolbarModule,
 			MatTooltipModule,
 			MatStepperModule,
+    NgxSpinnerModule
     ],
 	declarations: [NgbdAddRecipeBasic]
 })
