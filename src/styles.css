@@ -1,14 +1,14 @@
 .blue-snackbar {
-  background: #2196F3;
+  background: #2196F3 !important;
   color:white;
 }
 
 .green-snackbar {
-  background: rgb(41, 177, 86);
+  background: rgb(41, 177, 86) !important;
   color:white;
 }
 .red-snackbar {
-  background: rgb(216, 8, 8);
+  background: rgb(216, 8, 8) !important;
   color:white;
 }
 
@@ -46,6 +46,10 @@
   height: 0% !important;
   width: 100% !important;
 }
-
+@media all and (max-width: 768px) {
+  .display-search{
+    margin-top: 8px !important;
+  }
+}
 
 

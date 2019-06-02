@@ -94,44 +94,44 @@ a {
 
   }
 //set color of background image when hover to white and hight and width to 100% to cover full div
-                                                                                .recipe:after {
-                                                                                  content: "";
-                                                                                  position: absolute;
-                                                                                  width: 100%;
-                                                                                  height: 100%;
-                                                                                  top: 0;
-                                                                                  left: 0;
-                                                                                  background-color: #fff;
-                                                                                  animation: fadeout 500ms ease-in forwards;
-                                                                                  transition: all 500ms;
-                                                                                }
+  .recipe:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    animation: fadeout 500ms ease-in forwards;
+    transition: all 500ms;
+  }
 
-.recipe:hover:after, .recipe:active:after, .recipe:focus:after {
+  .recipe:hover:after, .recipe:active:after, .recipe:focus:after {
 
-  opacity: 0;
-  animation: fadein 500ms ease-in forwards;
-  z-index: 1;
-}
+    opacity: 0;
+    animation: fadein 500ms ease-in forwards;
+    z-index: 1;
+  }
 //set imag hight 70% of div recipe in starting it will halfimage means 100% to 70% heigth
 
-                                                                                   .recipe img {
-                                                                                     position: absolute;
-                                                                                     top: 0;
-                                                                                     left: -20%;
-                                                                                     height: 70%;
-                                                                                     animation: halfimage 500ms ease-in-out forwards;
-                                                                                   }
+ .recipe img {
+   position: absolute;
+   top: 0;
+   left: -20%;
+   height: 70%;
+   animation: halfimage 500ms ease-in-out forwards;
+ }
 //set image height from 70% to 100% of the div recipe when hover use fullimage keyframe
-                                    .recipe:hover img, .recipe:focus img {
-                                      animation: fullimage 500ms ease-in-out forwards;
+  .recipe:hover img, .recipe:focus img {
+    animation: fullimage 500ms ease-in-out forwards;
 
-                                    }
+  }
 //use fadein for opacity 0  to 0.38
 
-.recipe:hover i, .recipe:focus i	 {
-  animation: fadein 500ms ease-in-out forwards;
+  .recipe:hover i, .recipe:focus i	 {
+    animation: fadein 500ms ease-in-out forwards;
 
-}
+  }
 //color of recipe name and by text
 
   .recipe h3, .recipe p {
