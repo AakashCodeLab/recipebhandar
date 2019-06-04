@@ -1,8 +1,12 @@
 export default class Recipe {
   name: String;
-   desc: String;
-   ingredients: string[];
-   howto: String;
+  recipeDetail: String;
+  ingredients: [{
+    ingredient: String
+  }];
+  instructions: String;
+  preptime: Number;
+  cooktime: Number;
   url: String;
   author: String;
 }

@@ -323,3 +323,46 @@ a.btn {
   opacity: 1;
   color: white !important;
 }
+.a-btn-slide-text span{
+
+  color: white !important;
+}
+p {
+  font-family: Lato;
+}
+
+.page-header{
+
+  background-position: center center;
+  background-size: cover;
+  min-height: 50vh;
+  max-height: 99px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.recipe-name{
+  color: #fff !important;
+  font-size: 30px;
+}
+.user-name{
+  color: mintcream !important;
+  font-size: 22px;
+}
+.ingredients,.directions{
+  font-size: 18px;
+}
+.recipe-details p,h1,h3{
+color:#fff;
+}
+.time-instructions p{
+font-weight: 800;
+  font-size: 18px;
+}
+.page-header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

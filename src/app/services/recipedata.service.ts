@@ -10,7 +10,7 @@ import Recipe from '../Recipe';
 })
 export class RecipedataService {
   private recipeSearchSubject = new BehaviorSubject(null);
-  uri = 'recipe';
+  uri = 'http://localhost:8080/recipe';
 
   constructor(private http: HttpClient, private snackbar: MatSnackBar, public router: Router) { }
 

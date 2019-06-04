@@ -11,6 +11,7 @@ import {MatSnackBar} from '@angular/material';
 export class StarterComponent implements  OnInit , AfterViewInit {
   viewRecipePage = false;
   recipeData: Recipe[];
+  reacipeDetails: Recipe;
   copyRecpeData: Recipe[];
     constructor(public router: Router, private recipeservice: RecipedataService , private spinner: NgxSpinnerService, private snackbar: MatSnackBar) {
     }
@@ -83,6 +84,7 @@ export class StarterComponent implements  OnInit , AfterViewInit {
   viewRecipe(recipe) {
       console.log(recipe);
     this.viewRecipePage = true;
+    this.reacipeDetails = recipe;
   }
   edit( recipeId) {
       console.log(recipeId);
