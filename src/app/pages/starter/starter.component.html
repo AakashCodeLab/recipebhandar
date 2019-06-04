@@ -6,7 +6,7 @@
   <p style="font-size: 20px; color: white;position: relative; top:40px;"></p>
   ></ngx-spinner>
 
-<section id="">
+<section id="" *ngIf="!viewRecipePage">
   <div class="" style="display: flex;justify-content: space-around;margin: 14px;flex-wrap: wrap;">
     <a *ngFor="let recipe of recipeData; let i = index;" (click)="view(recipe._id)">
       <div class="recipe">
@@ -19,7 +19,35 @@
         <p>by
           <span class="author">{{recipe.author}} </span>
         </p>
+        <div>
+        <div style="display: flex;justify-content:space-around; ">
+
+          <a (click)="edit(recipe._id)" class="btn a-btn-slide-text">
+            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+            <span><strong>Edit</strong></span>
+          </a>
+          <a  (click)="viewRecipe(recipe)" class="btn a-btn-slide-text">
+            <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+            <span><strong>View</strong></span>
+          </a>
+          <a (click)="deleteRecipe(recipe._id)" class="btn  a-btn-slide-text">
+            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            <span><strong>Delete</strong></span>
+          </a>
+
+        </div>
+
+        </div>
       </div>
+
     </a>
   </div>
 </section>
+
+<p *ngIf="viewRecipePage">
+view
+</p>
+
+
+
+
