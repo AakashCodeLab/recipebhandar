@@ -5,8 +5,8 @@ export default class Recipe {
     ingredient: String
   }];
   instructions: String;
-  preptime: any;
-  cooktime: any;
+  preptime: String;
+  cooktime: String;
   url: String;
   author: String;
 }

@@ -17,12 +17,8 @@ let Recipe = new Schema({
   instructions: {
     type: String
   },
-  preptime: {
-    type: any
-  },
-  cooktime: {
-    type: any
-  },
+  preptime: String,
+  cooktime: String,
 
   url: {
     type: String
