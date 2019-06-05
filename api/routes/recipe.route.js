@@ -41,6 +41,17 @@ recipeRoutes.route('/edit/:id').get(function (req, res) {
   });
 });
 
+// Defined edit route
+recipeRoutes.route('/madebyme/:id').get(function (req, res) {
+  let id = req.params.id;
+  Recipe.findById(id, function (err, recipe){
+    res.json(recipe);
+  });
+});
+
+
+
+
 //  Defined update route
 recipeRoutes.route('/update/:id').put(function (req, res) {
   console.log(req.params.id);

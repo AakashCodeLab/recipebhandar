@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
         return;
       }
 
-      let registeruser = [];
+      let registeruser: any;
       this.authentication.login(this.loginForm.value.userName, this.loginForm.value.password)
         .subscribe(
           data => {
@@ -56,7 +56,13 @@ export class LoginComponent implements OnInit, AfterViewInit {
             this.errorvalue = data.errorvalue;
             if (this.errorvalue === 0) {
               this.router.navigate(['/home']);
-              localStorage.setItem('currentuser',  JSON.stringify(this.loginForm.value));
+
+              const currentuseroBj = {
+                userName: this.loginForm.value.userName,
+                id: registeruser.user._id
+              };
+              console.log(currentuseroBj)
+              localStorage.setItem('currentuser',  JSON.stringify(currentuseroBj));
             }
           },
           error => {

@@ -9,7 +9,7 @@ userRoutes.route('/signup').post(function (req, res) {
   let user = new Users(req.body);
   user.save()
     .then(user => {
-      res.status(200).json({'user': 'User added successfully'});
+      res.status(200).json({'user': 'User added successfully','loginUser':user});
     })
     .catch(err => {
       res.status(400).send("unable to save to database");

@@ -33,7 +33,6 @@ export class SignupComponent implements OnInit {
     if (this.registerForm.invalid) {
       return;
     }
- 
     const loginobj = {
       userName: '',
       password: '',
@@ -43,20 +42,23 @@ export class SignupComponent implements OnInit {
     loginobj.userName = this.registerForm.value.userName;
     loginobj.password = this.registerForm.value.password;
     loginobj.email = this.registerForm.value.email;
-    this.authentication.signUp(loginobj).subscribe(res =>{
+    this.authentication.signUp(loginobj).subscribe(res => {
+      console.log(res);
       const snack = this.snackbar.open('Welcome to RecipeBhandar','', {
         duration: 1000,
         panelClass: ['green-snackbar']
       });
-      this.router.navigate(['/home']);
+      this.router.navigate(['/login']);
     },(err) => {
-      const snack = this.snackbar.open('Something went wrong','', {
+      const snack = this.snackbar.open('Something went wrong',' ', {
         duration: 500,
         panelClass: ['red-snackbar']
       });
-      console.log(err)
+      console.log(err);
     });
-    localStorage.setItem('currentuser',  JSON.stringify(loginobj));
+
+
+
     this.router.navigate(['/login']);
   }
 }

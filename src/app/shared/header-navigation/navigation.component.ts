@@ -10,12 +10,23 @@ import {Router} from '@angular/router';
 export class NavigationComponent implements OnInit, AfterViewInit {
   name: string;
   showHide: boolean;
+  showSearchButton = true;
   searchRecipe;
   constructor(private recipeservice: RecipedataService, public router: Router) {
     this.showHide = true;
   }
+
   ngOnInit() {
     console.log(this.router.url);
+
+    setInterval(() => {
+      if ( this.router.url === '/add') {
+        this.showSearchButton = false;
+      }
+      if ( this.router.url === '/home') {
+        this.showSearchButton = true;
+      }
+    }, 1);
   }
   changeShowStatus() {
     this.showHide = !this.showHide;

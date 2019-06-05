@@ -43,7 +43,7 @@ export class StarterComponent implements  OnInit , AfterViewInit {
     this.showSearchOnHeader = true;
     this.spinner.show();
     this.recipeservice
-      .getEmployeeDetail()
+      .getRecipeOnSearch()
       .subscribe((data: Recipe[]) => {
         console.log(data);
         if (data !== null && data.length > 0) {

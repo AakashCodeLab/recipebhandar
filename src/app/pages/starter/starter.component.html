@@ -8,7 +8,7 @@
 
 <section id="" *ngIf="!viewRecipePage">
   <div class="" style="display: flex;justify-content: space-around;margin: 14px;flex-wrap: wrap;">
-    <a *ngFor="let recipe of recipeData; let i = index;" (click)="view(recipe._id)">
+    <a *ngFor="let recipe of recipeData; let i = index;" (click)="viewRecipe(recipe)">
       <div class="recipe">
         <i (click)="deleteRecipe(recipe._id)" class="icon">×</i>
         <a (click)="edit(recipe._id)">
@@ -20,22 +20,24 @@
           <span class="author">{{recipe.author}} </span>
         </p>
 
-        <div style="display: flex;justify-content:space-around; ">
 
-          <a (click)="edit(recipe._id)" class="btn a-btn-slide-text">
-            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-            <span><strong>Edit</strong></span>
-          </a>
-          <a  (click)="viewRecipe(recipe)" class="btn a-btn-slide-text">
-            <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-            <span><strong>View</strong></span>
-          </a>
-          <a (click)="deleteRecipe(recipe._id)" class="btn  a-btn-slide-text">
-            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-            <span><strong>Delete</strong></span>
-          </a>
+      </div>
 
-        </div>
+      <div style="display: flex;justify-content:space-around;">
+
+        <a (click)="edit(recipe._id)" class="btn btn-primary a-btn-slide-text" style="z-index: 0">
+          <span class="glyphicon glyphicon-plus icon-pencil" aria-hidden="true" ></span>
+          <span><strong>Edit</strong></span>
+        </a>
+        <a  (click)="viewRecipe(recipe)" class="btn btn-primary a-btn-slide-text" style="z-index: 0">
+          <span class="glyphicon glyphicon-plus icon-eye" aria-hidden="true"></span>
+          <span><strong>View</strong></span>
+        </a>
+        <a (click)="deleteRecipe(recipe._id)" class="btn btn-primary a-btn-slide-text" style="z-index: 0">
+          <span class="glyphicon glyphicon-plus icon-trash " aria-hidden="true"></span>
+          <span><strong>Delete</strong></span>
+        </a>
+
       </div>
 
     </a>
