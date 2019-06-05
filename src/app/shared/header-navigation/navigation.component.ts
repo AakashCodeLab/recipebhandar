@@ -1,19 +1,22 @@
-import { Component, AfterViewInit } from '@angular/core';
+import {Component, AfterViewInit, OnInit} from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {RecipedataService} from '../../services/recipedata.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'ap-navigation',
   templateUrl: './navigation.component.html'
 })
-export class NavigationComponent implements AfterViewInit {
+export class NavigationComponent implements OnInit, AfterViewInit {
   name: string;
   showHide: boolean;
   searchRecipe;
-  constructor(private recipeservice: RecipedataService) {
+  constructor(private recipeservice: RecipedataService, public router: Router) {
     this.showHide = true;
   }
-
+  ngOnInit() {
+    console.log(this.router.url);
+  }
   changeShowStatus() {
     this.showHide = !this.showHide;
   }

@@ -21,7 +21,7 @@ export class NgbdAddRecipeBasic implements OnInit {
                public  route: ActivatedRoute, private formBuilder: FormBuilder, private spinner: NgxSpinnerService ) { }
 
   ngOnInit() {
-   
+
     this.route.paramMap.subscribe(params => {
       this.recipeId = params.get('id');
       if (this.recipeId) {
@@ -165,6 +165,10 @@ export class NgbdAddRecipeBasic implements OnInit {
   }
   getControls(frmGrp: FormGroup, key: string) {
     return (<FormArray>frmGrp.controls[key]).controls;
+  }
+
+  GoToListRecipe(){
+    this.router.navigate(['/home']);
   }
 }
 

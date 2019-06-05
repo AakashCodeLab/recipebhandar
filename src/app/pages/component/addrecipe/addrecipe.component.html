@@ -78,16 +78,16 @@
                     <div style="margin-top: 16px;" class="form-group" class="prep-time">
                       <div class="col-sm-12 col-md-6" style="padding: 0">
                         <label for="preptime">Preparation Time:</label>
-                        <input type="number" class="form-control"  formControlName="preptime" [ngClass]="{'is-invalid':form.get('preptime').touched && form.get('preptime').invalid}" required />
+                        <input type="number" class="form-control" placeholder="In Minutes"  formControlName="preptime" [ngClass]="{'is-invalid':form.get('preptime').touched && form.get('preptime').invalid}" required />
                         <div class="invalid-feedback">
-                          <div>Recipe Instructions required</div>
+                          <div>Preparation Time required</div>
                         </div>
                       </div>
                       <div class="col-sm-12 col-md-6 cook-time" >
                         <label for="cooktime">Cook Time:</label>
-                        <input type="number" class="form-control"  formControlName="cooktime" [ngClass]="{'is-invalid':form.get('cooktime').touched && form.get('cooktime').invalid}" required />
+                        <input type="number" class="form-control" placeholder="In Minutes" formControlName="cooktime" [ngClass]="{'is-invalid':form.get('cooktime').touched && form.get('cooktime').invalid}" required />
                         <div class="invalid-feedback">
-                          <div>Recipe Instructions required</div>
+                          <div>Cook Time required</div>
                         </div>
                       </div>
 
@@ -109,6 +109,9 @@
                   </form>
                 </div>
               </div>
+            </div>
+            <div class="w3-clear nextprev">
+              <a (click)="GoToListRecipe()" style="color: white !important;" class="w3-left w3-btn">❮ Go Back</a>
             </div>
           </div>
         </section>

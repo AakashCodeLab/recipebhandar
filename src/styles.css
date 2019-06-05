@@ -53,3 +53,53 @@
 }
 
 
+.w3-white, .w3-hover-white:hover {
+  color: #000!important;
+  background-color: #fff!important;
+}
+
+.w3-light-grey, .w3-hover-light-grey:hover, .w3-light-gray, .w3-hover-light-gray:hover {
+  color: #000!important;
+  background-color: #f1f1f1!important;
+}
+.nextprev a.w3-right, .nextprev a.w3-left {
+  background-color: #f9bd39;
+  color: #ffffff;
+  border-color: #f9bd39;
+}
+.nextprev a:link, .nextprev a:visited {
+  background-color: #ffffff;
+  color: #000000;
+}
+.w3-btn, .w3-btn:link, .w3-btn:visited {
+  color: #FFFFFF;
+  background-color: #f9bd39;
+}
+.nextprev a {
+  font-size: 17px;
+  border: 1px solid #cccccc;
+}
+.w3-left {
+  float: left!important;
+}
+.w3-btn, .w3-button {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.w3-btn, .w3-button {
+  border: none;
+  display: inline-block;
+  padding: 8px 16px;
+  vertical-align: middle;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  background-color: inherit;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+}

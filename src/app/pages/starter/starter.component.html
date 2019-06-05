@@ -43,6 +43,10 @@
 </section>
 
 <div *ngIf="viewRecipePage">
+
+  <div class="w3-clear nextprev">
+    <a  style="color: white !important;" (click)="GoToListRecipe()" class="w3-left w3-btn">❮ Go Back</a>
+  </div>
   <div class="main recipeDetail" style="background-color:#F9BD39">
     <div class="page-header" [style.backgroundImage]="'url('+ reacipeDetails.url +')'" style="height: 100%">
       <div class="content-center">
@@ -65,15 +69,20 @@
           <div class="col-md-6" >
             <h3 class="ingredients">Ingredients</h3>
 
-              <li  *ngFor="let instructions of reacipeDetails.ingredients; let i = index" style="font-size: 16px; color: mintcream !important;" >
-               {{instructions.ingredient}}
+              <li  *ngFor="let ingredients of reacipeDetails.ingredients; let i = index" style="font-size: 16px; color: mintcream !important;" >
+               {{ingredients.ingredient}}
               </li>
 
           </div>
 
           <div class="col-md-6" >
           <h3 class="directions"  >Directions</h3>
-           <p style="font-size: 16px">{{reacipeDetails.instructions}}</p>
+
+            <p  *ngFor="let instruction of instructionArray; let i = index" style="font-size: 16px; color: mintcream !important;" >
+              {{i+1+'.'}} {{ instruction}}
+            </p>
+
+           <!--<p style="font-size: 16px">{{reacipeDetails.instructions}}</p>-->
 </div>
 </div>
 <div></div>

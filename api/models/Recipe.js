@@ -18,10 +18,10 @@ let Recipe = new Schema({
     type: String
   },
   preptime: {
-    type: Number
+    type: any
   },
   cooktime: {
-    type: Number
+    type: any
   },
 
   url: {

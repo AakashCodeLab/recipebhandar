@@ -17,7 +17,7 @@ export class RecipedataService {
 
   sendSearchRecipe(recipename) {
     console.log(recipename);
-    if (recipename === ''){
+    if (recipename === '') {
       recipename = 'all';
     }
     const data = this
