@@ -15,7 +15,7 @@ const routes: Routes = [
     path: 'signup',
     loadChildren: './signup/signup.module#SignupModule'
   },
-  { path: '**', redirectTo: '', pathMatch: 'full' }
+  { path: '**', redirectTo: ''}
 ];
 
 @NgModule({
