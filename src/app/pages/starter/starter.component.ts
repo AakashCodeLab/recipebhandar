@@ -15,10 +15,14 @@ export class StarterComponent implements  OnInit , AfterViewInit {
   reacipeDetails: Recipe;
   copyRecpeData: Recipe[];
   instructionArray = [];
+test = 0;
     constructor(public router: Router, private recipeservice: RecipedataService ,
                 private spinner: NgxSpinnerService, private snackbar: MatSnackBar) {
     }
   ngOnInit() {
+   setInterval(()=>{
+test = test+1;
+  });
     this.spinner.show();
     this.getData();
     this.searchRecipe();
